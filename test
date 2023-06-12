@@ -1,0 +1,16 @@
+ temp_org = sensor_data_normalized['T2'].to_numpy()
+    temp_ano = anomalies['T2'].to_numpy()
+    time_org = sensor_data_normalized['Time'].to_numpy()
+    time_ano = anomalies['Time'].to_numpy()
+    plt.scatter(time_org, temp_org , label = 'original')
+    plt.scatter(time_ano, temp_ano , label = 'anoamly')
+
+    fig = plt.figure()
+    
+    plt.title("Gaussian Mixture Model")
+    plt.legend()
+    plt.grid()
+    plt.show()
+    # plt.show()
+    st.pyplot(fig)
+    st.write("Number of anomaly points = ", anomalies.shape[0])
